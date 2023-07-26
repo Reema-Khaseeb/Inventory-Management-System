@@ -19,5 +19,13 @@ namespace InventoryManagementSystem
         {
             products.Add(product);
         }
+
+        public void ViewAllProducts()
+        {
+            foreach (var product in products)
+            {
+                Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
+            }
+        }
     }
 }
