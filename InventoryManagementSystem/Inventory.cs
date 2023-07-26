@@ -43,5 +43,19 @@ namespace InventoryManagementSystem
                 Console.WriteLine("Product not found.");
             }
         }
+
+        public void DeleteProduct(string productName)
+        {
+            var product = products.Find(p => p.Name.Equals(productName, StringComparison.OrdinalIgnoreCase));
+            if (product != null)
+            {
+                products.Remove(product);
+                Console.WriteLine("Product deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Product not found.");
+            }
+        }
     }
 }
