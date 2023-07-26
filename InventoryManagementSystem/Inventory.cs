@@ -27,5 +27,21 @@ namespace InventoryManagementSystem
                 Console.WriteLine($"Name: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
             }
         }
+
+        public void EditProduct(string productName, string newName, double newPrice, int newQuantity)
+        {
+            var product = products.Find(p => p.Name.Equals(productName, StringComparison.OrdinalIgnoreCase));
+            if (product != null)
+            {
+                product.Name = newName;
+                product.Price = newPrice;
+                product.Quantity = newQuantity;
+                Console.WriteLine("Product updated successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Product not found.");
+            }
+        }
     }
 }
